@@ -1,0 +1,15 @@
+clear;
+clc;
+P=getresult('monitor','P');
+t=getdata('monitor','t');
+a1 = size(t,1);
+P2=matrix(1,a1);
+P3=P.P;
+b1= size(P3,2);
+c1= size(P3,3);
+for(i=1; i<=a1; i=i+1) {
+for(j=1; j<=b1; j=j+1){
+for(k=1; k<=c1; k=k+1){
+P2(1,i)=P3(1,j,k,i,1)+P2(1,i);
+}}}
+plot(t,P2);
