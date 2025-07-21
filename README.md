@@ -19,6 +19,7 @@ A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmissio
 
 
 
+
 ## 2 Quick start (reproduce one spectrum)
 
 1. Open `.lms` file, choose suitable temperature and m values respectively by editing them in *FDTD*/*VarFDTD* solver and *taper* properties. click **Run**.  
@@ -27,7 +28,9 @@ A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmissio
    
 > **Tip:** the material models already include the measured thermo‑optic dispersion used in the paper; to sweep temperature simply adjusting the global `Temp` property would suffice.
 
----
+
+
+
 
 ## 3 Regenerate the paper figures (MATLAB)
 
