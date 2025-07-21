@@ -22,7 +22,7 @@ A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmissio
 
 ## 2 Redoing the simulations
 
-1. Open `.lms` file, choose suitable temperature and m values respectively by editing them in *FDTD*/*VarFDTD* solver and *taper* properties. click **Run**.  
+1. Open `.lms`/`.fsp` file, choose desired temperature and m values respectively by editing them in *FDTD*/*VarFDTD* solver and *taper* properties. click **Run**.  
 2. When the simulation finishes, right‑click the *monitor_5* → *Visualise* → *Transmission*. You should see the transmission plot over wavelength range for the particular temperature and m value. If there is an `.lsf` script file, run it after the simulation is finished.
 3. You can also find a wide range of sweeps in *Optimizations and Sweeps* tab on the right hand side, with some results already available without a need to run them.
    
