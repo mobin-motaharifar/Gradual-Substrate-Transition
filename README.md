@@ -1,9 +1,6 @@
 # Gradual Substrate Transition
 A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmission in Photonic Integrated Circuits
 
-> Please open an issue if anything is missing or unclear.
-
----
 
 ## 1 What is in this repo?
 
