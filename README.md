@@ -1,19 +1,18 @@
 # Gradual Substrate Transition
 A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmission in Photonic Integrated Circuits
 
-> **Repository status:** data‑complete / doc‑light.  
 > Please open an issue if anything is missing or unclear.
 
 ---
 
 ## 1 What is in this repo?
 
-| Folder / file | Purpose |
-| -------------- | ------- |
-| **`Dispersion/`** | Group‑velocity‑dispersion (GVD) sweeps, saved as `.mat` and `.png` (used for Fig. 4 of the paper). |
-| **`E and H fields/`** | False‑colour exports of the electric‑ and magnetic‑field snapshots at 1.55 µm (Fig. 5). |
-| **`Tolerance/`** | Width‑error sweeps (±5 %, ±10 %) in `.mat` + ready‑made plots (Fig. 6). |
-| **`Transmission_plots/`** | Wavelength‑dependent transmission curves and the multi‑temperature dataset (Fig. 2 | Fig. 3). |
+| Folder / file | Purpose | Figure(s) |
+| -------------- | ------- | -- |
+| **`Transmission_plots/`** | Wavelength‑dependent transmission curves and the multi‑temperature dataset | Fig. 3
+| **`Tolerance/`** | Width‑error sweeps (±5 %, ±10 %) in `.mat` + ready‑made plots | Fig. 4
+| **`E and H fields/`** | False‑colour plot exports of the electric and magnetic field snapshots at 1.55 µm | Fig. 5
+| **`Dispersion/`** | Dispersion simulation file (.fsp), script to retrive time domain plots from the simulations (.lsf) as well as the exported data for MATLAB (.m and .mat) | Fig. 7
 | **`InP_SiO2_forward.lms`** | Lumerical **MODE** project – InP → SiO₂ graded transition (1 µm long). |
 | **`InP_SiO2_reversed.lms`** | MODE project – SiO₂ → InP direction (same geometry, reversed launch). |
 | **`SiO2_InP_forward.lms`**, **`SiO2_InP_reversed.lms`** | Reference simulations for the abrupt interface. |
