@@ -18,26 +18,4 @@ A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmissio
 
 Figures concerning those folders that have MATLAB files can be regenerated straight from `.m` files without the need to run the simulations.
 
----
 
-## 2 Quick start (reproduce one spectrum)
-
-1. **Launch Lumerical MODE** (2024 R1 or newer).  
-2. Open `InP_SiO2_forward.lms` and click **Run**.  
-3. When the simulation finishes, right‑click the *power monitor* → *Visualise* → you should obtain ~0.9 dB insertion loss at 1550 nm, matching Fig. 2 (blue curve, *m*=1.55).
-
-> **Tip:** the material models already include the measured thermo‑optic dispersion used in the paper; to sweep temperature simply adjust the global `Temp` property in the *Material* object and re‑run.
-
----
-
-## 3 Regenerate the paper figures (MATLAB)
-
-```matlab
-cd Dispersion
-run plot_dispersion.m   % reproduces Fig. 4
-
-cd ../Transmission_plots
-run plot_spectra.m      % reproduces Fig. 2 & 3
-
-cd ../Tolerance
-run plot_tolerance.m    % reproduces Fig. 6
