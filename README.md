@@ -15,7 +15,6 @@ A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmissio
 | **`E and H fields/`** | False‑colour plot exports of the electric and magnetic field snapshots at 1.55 µm | Fig. 5
 | **`Dispersion/`** | Dispersion simulation file (.fsp), script to retrive time domain plots from the simulations (.lsf) as well as the exported data for MATLAB (.m and .mat) | Fig. 7
 | **`LICENSE`** | MIT licence. |
-| **`README.md`** | *You are here.* |
 
 Figures concerning those folders that have MATLAB files can be regenerated straight from `.m` files without the need to run the simulations.
 
