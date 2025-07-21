@@ -20,7 +20,7 @@ A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmissio
 
 
 
-## 2 Quick start (reproduce one spectrum)
+## 2 Redoing the simulations
 
 1. Open `.lms` file, choose suitable temperature and m values respectively by editing them in *FDTD*/*VarFDTD* solver and *taper* properties. click **Run**.  
 2. When the simulation finishes, right‑click the *monitor_5* → *Visualise* → *Transmission*. You should see the transmission plot over wavelength range for the particular temperature and m value. If there is an `.lsf` script file, run it after the simulation is finished.
@@ -32,6 +32,6 @@ A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmissio
 
 
 
-## 3 Regenerate the paper figures (MATLAB)
+## 3 Regenerate the paper figures using MATLAB
 
 Figures concerning those folders that have MATLAB files can be regenerated straight from `.m` files without the need to run the simulations.
