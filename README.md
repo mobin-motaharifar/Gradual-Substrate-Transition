@@ -1,7 +1,5 @@
 # Gradual Substrate Transition
 
-A thermally stable gradual substrate-transition design for enhanced optical transmission in heterogeneous photonic integrated circuits.
-
 This repository contains the simulation files, exported data, and MATLAB post-processing scripts associated with the manuscript:
 
 **“Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmission in Photonic Integrated Circuits”**
@@ -104,12 +102,6 @@ Fig. 6(d), the maximum-deformation visualization, should be regenerated directly
 
 ---
 
-## 6. Data availability
-
-The repository contains the raw and processed simulation data required to reproduce the main figures of the manuscript. Additional post-processing can be performed by modifying the provided MATLAB scripts.
-
----
-
-## 7. License
+## 6. License
 
 This project is released under the MIT License. See the `LICENSE` file for details.
