@@ -90,35 +90,7 @@ Suggested COMSOL workflow:
 
 ---
 
-## 5. Regenerating Fig. 6 plots using MATLAB
-
-The plots in Fig. 6(b) and Fig. 6(c) can be regenerated directly from the exported data files in the `Thermal_Stress/` folder.
-
-Required files:
-
-| File | Purpose |
-| ---- | ------- |
-| **`Stress.xlsx`** | Point-probe first-principal-stress data at the surface and at 220 nm depth. |
-| **`Average Stress.xlsx`** | Interface-averaged first-principal-stress data over the InP/SiO₂ interface. |
-| **`Displaccement.xlsx`** | Point-probe displacement-magnitude data at the surface and at 220 nm depth. |
-| **`plot_code.m`** | MATLAB script used to regenerate the stress and displacement plots. |
-
-To regenerate the plots:
-
-1. Open MATLAB.
-2. Navigate to the `Thermal_Stress/` folder.
-3. Make sure `Stress.xlsx`, `Average Stress.xlsx`, `Displaccement.xlsx`, and `plot_code.m` are in the same folder.
-4. Run: plot_code.m
-5. The script will generate:
-
-   * the combined first-principal-stress plot corresponding to Fig. 6(b),
-   * the displacement-magnitude plot corresponding to Fig. 6(c).
-
-Fig. 6(d), the maximum-deformation visualization, should be regenerated directly from the COMSOL model after rerunning the static and sweep studies.
-
----
-
-## 6. Regenerating the remaining paper figures using MATLAB
+## 5. Regenerating the paper figures using MATLAB
 
 Figures associated with folders containing `.m` files can be regenerated directly from the MATLAB scripts.
 
@@ -136,14 +108,16 @@ General procedure:
 | **`Dispersion/`**                              | Fig. 7 time-domain pulse comparison                   |
 | **`Tolerance/`**                               | Fig. 8 fabrication-tolerance curves                   |
 
+Fig. 6(d), the maximum-deformation visualization, should be regenerated directly from the COMSOL model after rerunning the static and sweep studies.
+
 ---
 
-## 7. Data availability
+## 6. Data availability
 
 The repository contains the raw and processed simulation data required to reproduce the main figures of the manuscript. Additional post-processing can be performed by modifying the provided MATLAB scripts.
 
 ---
 
-## 8. License
+## 7. License
 
 This project is released under the MIT License. See the `LICENSE` file for details.
