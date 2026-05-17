@@ -1,37 +1,65 @@
 # Gradual Substrate Transition
-A Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmission in Photonic Integrated Circuits
 
+A thermally stable gradual substrate-transition design for enhanced optical transmission in heterogeneous photonic integrated circuits.
 
+This repository contains the simulation files, exported data, and MATLAB post-processing scripts associated with the revised manuscript:
 
+**“Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmission in Photonic Integrated Circuits”**
 
-## 1 What is in this repo?
+---
 
-| Folder / file | Purpose | Figure(s) |
-| -------------- | ------- | -- |
-| **`Transmission Simulations`** | Lumerical **MODE** projects for all 4 cases of the graded transition and all 4 temperatures | Fig. 1 & Fig. 6
-| **`Wavelength_Dependant_Transmission_plots/`** | Wavelength‑dependent transmission curves | Fig. 3
-| **`Tolerance/`** | Performance data (`.mat`) for ±5%, ±10% fabrication error and their plot code (`.m`) | Fig. 4
-| **`E and H fields/`** | False‑colour plot exports of the electric and magnetic field snapshots at 1.55 µm | Fig. 5
-| **`Dispersion/`** | Dispersion simulation file (`.fsp`), script to retrive time domain plots from the simulations (`.lsf`) as well as the exported data for MATLAB (`.m` and `.mat`) | Fig. 7
-| **`LICENSE`** | MIT licence. |
+## 1. What is in this repo?
 
+| Folder / file | Purpose | Related figure(s) in revised manuscript |
+| -------------- | ------- | -------------------------------------- |
+| **`Transmission Simulations/`** | Lumerical MODE / varFDTD projects for the four substrate-transition cases, including graded and abrupt configurations and temperature-dependent simulations. | Fig. 2, Fig. 5 |
+| **`Wavelength_Dependant_Transmission_plots/`** | MATLAB files and exported data for wavelength-dependent transmission spectra of selected transition profiles. | Fig. 3 |
+| **`E and H fields/`** | Exported electric- and magnetic-field intensity maps at 1.55 µm for the optimized transition. | Fig. 4 |
+| **`Thermal_Stress/`** | COMSOL thermomechanical simulation file, including `Thermal_Stress.mph`, used to evaluate first principal stress, interface-averaged stress, and displacement under temperature variation. | Fig. 6 |
+| **`Dispersion/`** | Time-domain / signal-quality simulation files, including Lumerical project files, scripts to retrieve pulse data, and MATLAB files for plotting pulse width and arrival time. | Fig. 7 |
+| **`Tolerance/`** | Performance data and MATLAB scripts for ±5% and ±10% dimensional perturbations of the representative transition width. | Fig. 8 |
+| **`LICENSE`** | MIT license. | — |
 
+---
 
+## 2. Revised manuscript figure map
 
+| Figure | Description |
+| ------ | ----------- |
+| **Fig. 1** | Schematic representation of abrupt and gradual substrate transitions. |
+| **Fig. 2** | Transmission-efficiency maps as a function of wavelength and transition parameter `m`. |
+| **Fig. 3** | Wavelength-dependent transmission comparison between abrupt and graded transitions. |
+| **Fig. 4** | Electric- and magnetic-field confinement at 1.55 µm. |
+| **Fig. 5** | Temperature-dependent optical transmission comparison from 10 K to 500 K. |
+| **Fig. 6** | COMSOL thermomechanical analysis: first principal stress, interface-averaged stress, displacement, and maximum-deformation visualization. |
+| **Fig. 7** | Time-domain signal-quality comparison between abrupt and graded transitions. |
+| **Fig. 8** | Fabrication-tolerance analysis for ±5% and ±10% dimensional perturbations. |
 
+---
 
-## 2 Redoing the simulations
+## 3. Redoing the Lumerical simulations
 
-1. Open `.lms`/`.fsp` file, choose desired temperature and m values respectively by editing them in *FDTD*/*VarFDTD* solver and *taper* properties. click **Run**.  
-2. When the simulation finishes, right‑click the *monitor_5* → *Visualise* → *Transmission*. You should see the transmission plot over wavelength range for the particular temperature and m value. If there is an `.lsf` script file, run it after the simulation is finished.
-3. You can also find a wide range of sweeps in *Optimizations and Sweeps* tab on the right hand side, with some results already available without a need to run them.
-   
-> **Tip:** the material models already include the measured thermo‑optic dispersion used in the paper; to sweep temperature simply adjusting the global `Temp` property would suffice.
+1. Open the desired `.lms` or `.fsp` file in Lumerical MODE / FDTD.
+2. Select the desired temperature, transition direction, and transition parameter `m` by editing the corresponding solver, material, or taper properties.
+3. Run the simulation.
+4. After the simulation finishes, open the relevant monitor result. For wavelength-domain simulations, right-click the transmission monitor and select:
 
+   **Visualize → Transmission**
 
+5. If an `.lsf` script is provided in the folder, run the script after the simulation finishes to export the required data for MATLAB post-processing.
+6. Some projects include predefined parameter sweeps under the **Optimizations and Sweeps** tab. In several cases, sweep results are already available and can be inspected without rerunning the full simulation.
 
+> **Tip:** The material models used for the temperature-dependent optical simulations already include the thermo-optic dispersion assumptions used in the manuscript. To change temperature, adjust the global or material-specific temperature parameter consistently with the simulation setup.
 
+---
 
-## 3 Regenerate the paper figures using MATLAB
+## 4. Redoing the COMSOL thermomechanical simulation
 
-Figures concerning those folders that have MATLAB files can be regenerated straight from `.m` files without the need to run the simulations.
+The revised manuscript includes a new thermomechanical analysis shown in **Fig. 6**.
+
+To inspect or rerun this simulation:
+
+1. Open:
+
+   ```text
+   Thermal_Stress/Thermal_Stress.mph
