@@ -15,7 +15,7 @@ This repository contains the simulation files, exported data, and MATLAB post-pr
 | **`Transmission Simulations/`** | Lumerical MODE / varFDTD projects for the four substrate-transition cases, including graded and abrupt configurations and temperature-dependent simulations. | Fig. 2, Fig. 5 |
 | **`Wavelength_Dependant_Transmission_plots/`** | MATLAB files and exported data for wavelength-dependent transmission spectra of selected transition profiles. | Fig. 3 |
 | **`E and H fields/`** | Exported electric- and magnetic-field intensity maps at 1.55 µm for the optimized transition. | Fig. 4 |
-| **`Thermal_Stress/`** | COMSOL thermomechanical simulation file, including `Thermal_Stress.mph`, used to evaluate first principal stress, interface-averaged stress, and displacement under temperature variation. | Fig. 6 |
+| **`Thermal_Stress/`** | COMSOL thermomechanical simulation file `Thermal_Stress.mph`, exported stress/displacement data, and MATLAB plotting code for the thermomechanical results. | Fig. 6 |
 | **`Dispersion/`** | Time-domain / signal-quality simulation files, including Lumerical project files, scripts to retrieve pulse data, and MATLAB files for plotting pulse width and arrival time. | Fig. 7 |
 | **`Tolerance/`** | Performance data and MATLAB scripts for ±5% and ±10% dimensional perturbations of the representative transition width. | Fig. 8 |
 | **`LICENSE`** | MIT license. | — |
@@ -67,6 +67,8 @@ The model evaluates the optimized InP-to-SiO₂ gradual substrate transition wit
 - `T_ref = 300 K`
 - `T_final = 10 K to 500 K`
 
+The COMSOL model is the primary simulation file for the thermomechanical analysis. By running the static study and the temperature sweep, users can regenerate the stress and displacement fields, inspect the probe locations, evaluate the InP/SiO₂ interface average, and reproduce the maximum-deformation visualization shown in Fig. 6(d).
+
 The simulation extracts:
 
 - first principal stress at the upper-surface triple-material point,
@@ -81,14 +83,42 @@ Suggested COMSOL workflow:
 2. Check that the material parameters, thermal expansion settings, and mechanical boundary conditions are loaded correctly.
 3. Run the static study.
 4. Run the temperature sweep from 10 K to 500 K.
-5. Export the stress and displacement results if MATLAB replotting is needed.
-6. Use the MATLAB scripts in the `Thermal_Stress/` folder to regenerate the stress and displacement plots.
+5. Use the COMSOL results to inspect the stress distribution, displacement field, and maximum-deformation corner.
+6. Export the stress and displacement data if additional post-processing is needed.
 
 > **Note:** The thermomechanical results are intended as numerical trends under the modeled boundary conditions, not as a complete experimental reliability qualification.
 
 ---
 
-## 5. Regenerating the paper figures using MATLAB
+## 5. Regenerating Fig. 6 plots using MATLAB
+
+The plots in Fig. 6(b) and Fig. 6(c) can be regenerated directly from the exported data files in the `Thermal_Stress/` folder.
+
+Required files:
+
+| File | Purpose |
+| ---- | ------- |
+| **`Stress.xlsx`** | Point-probe first-principal-stress data at the surface and at 220 nm depth. |
+| **`Average Stress.xlsx`** | Interface-averaged first-principal-stress data over the InP/SiO₂ interface. |
+| **`Displaccement.xlsx`** | Point-probe displacement-magnitude data at the surface and at 220 nm depth. |
+| **`plot_code.m`** | MATLAB script used to regenerate the stress and displacement plots. |
+
+To regenerate the plots:
+
+1. Open MATLAB.
+2. Navigate to the `Thermal_Stress/` folder.
+3. Make sure `Stress.xlsx`, `Average Stress.xlsx`, `Displaccement.xlsx`, and `plot_code.m` are in the same folder.
+4. Run: plot_code.m
+5. The script will generate:
+
+   * the combined first-principal-stress plot corresponding to Fig. 6(b),
+   * the displacement-magnitude plot corresponding to Fig. 6(c).
+
+Fig. 6(d), the maximum-deformation visualization, should be regenerated directly from the COMSOL model after rerunning the static and sweep studies.
+
+---
+
+## 6. Regenerating the remaining paper figures using MATLAB
 
 Figures associated with folders containing `.m` files can be regenerated directly from the MATLAB scripts.
 
@@ -99,21 +129,21 @@ General procedure:
 3. Run the provided `.m` script.
 4. The script will load the associated `.mat`, `.xlsx`, or exported data files and regenerate the corresponding plot.
 
-| Folder | Main output |
-| ------ | ----------- |
-| **`Wavelength_Dependant_Transmission_plots/`** | Fig. 3 transmission spectra |
-| **`Thermal_Stress/`** | Fig. 6 stress and displacement plots |
-| **`Dispersion/`** | Fig. 7 time-domain pulse comparison |
-| **`Tolerance/`** | Fig. 8 fabrication-tolerance curves |
+| Folder                                         | Main output                                           |
+| ---------------------------------------------- | ----------------------------------------------------- |
+| **`Wavelength_Dependant_Transmission_plots/`** | Fig. 3 transmission spectra                           |
+| **`Thermal_Stress/`**                          | Fig. 6(b) and Fig. 6(c) stress and displacement plots |
+| **`Dispersion/`**                              | Fig. 7 time-domain pulse comparison                   |
+| **`Tolerance/`**                               | Fig. 8 fabrication-tolerance curves                   |
 
 ---
 
-## 6. Data availability
+## 7. Data availability
 
 The repository contains the raw and processed simulation data required to reproduce the main figures of the manuscript. Additional post-processing can be performed by modifying the provided MATLAB scripts.
 
 ---
 
-## 7. License
+## 8. License
 
 This project is released under the MIT License. See the `LICENSE` file for details.
