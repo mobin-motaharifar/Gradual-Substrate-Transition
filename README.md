@@ -69,14 +69,6 @@ The model evaluates the optimized InP-to-SiO₂ gradual substrate transition wit
 
 The COMSOL model is the primary simulation file for the thermomechanical analysis. By running the static study and the temperature sweep, users can regenerate the stress and displacement fields, inspect the probe locations, evaluate the InP/SiO₂ interface average, and reproduce the maximum-deformation visualization shown in Fig. 6(d).
 
-The simulation extracts:
-
-- first principal stress at the upper-surface triple-material point,
-- first principal stress at the 220 nm-deep triple-material point,
-- first principal stress averaged over the InP/SiO₂ interface,
-- displacement magnitude at the same two probe points,
-- maximum-deformation visualization at the corner of the structure.
-
 Suggested COMSOL workflow:
 
 1. Open `Thermal_Stress/Thermal_Stress.mph`.
