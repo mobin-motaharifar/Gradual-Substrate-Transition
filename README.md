@@ -2,7 +2,7 @@
 
 A thermally stable gradual substrate-transition design for enhanced optical transmission in heterogeneous photonic integrated circuits.
 
-This repository contains the simulation files, exported data, and MATLAB post-processing scripts associated with the revised manuscript:
+This repository contains the simulation files, exported data, and MATLAB post-processing scripts associated with the manuscript:
 
 **“Thermally Stable Gradual Substrate Transition for Enhanced Optical Transmission in Photonic Integrated Circuits”**
 
@@ -10,7 +10,7 @@ This repository contains the simulation files, exported data, and MATLAB post-pr
 
 ## 1. What is in this repo?
 
-| Folder / file | Purpose | Related figure(s) in revised manuscript |
+| Folder / file | Purpose | Related figure(s) in manuscript |
 | -------------- | ------- | -------------------------------------- |
 | **`Transmission Simulations/`** | Lumerical MODE / varFDTD projects for the four substrate-transition cases, including graded and abrupt configurations and temperature-dependent simulations. | Fig. 2, Fig. 5 |
 | **`Wavelength_Dependant_Transmission_plots/`** | MATLAB files and exported data for wavelength-dependent transmission spectra of selected transition profiles. | Fig. 3 |
@@ -22,7 +22,7 @@ This repository contains the simulation files, exported data, and MATLAB post-pr
 
 ---
 
-## 2. Revised manuscript figure map
+## 2. Manuscript figure map
 
 | Figure | Description |
 | ------ | ----------- |
