@@ -10,8 +10,8 @@ This repository contains the simulation files, exported data, and MATLAB post-pr
 
 ## 1. What is in this repo?
 
-| Folder / file | Purpose | Related figure(s) in manuscript |
-| -------------- | ------- | -------------------------------------- |
+| Folder / file | Purpose | Related figure(s) |
+| -------------- | ------- | ----------------- |
 | **`Transmission Simulations/`** | Lumerical MODE / varFDTD projects for the four substrate-transition cases, including graded and abrupt configurations and temperature-dependent simulations. | Fig. 2, Fig. 5 |
 | **`Wavelength_Dependant_Transmission_plots/`** | MATLAB files and exported data for wavelength-dependent transmission spectra of selected transition profiles. | Fig. 3 |
 | **`E and H fields/`** | Exported electric- and magnetic-field intensity maps at 1.55 µm for the optimized transition. | Fig. 4 |
@@ -55,11 +55,65 @@ This repository contains the simulation files, exported data, and MATLAB post-pr
 
 ## 4. Redoing the COMSOL thermomechanical simulation
 
-The revised manuscript includes a new thermomechanical analysis shown in **Fig. 6**.
+The COMSOL thermomechanical model used for Fig. 6 is located at:
 
-To inspect or rerun this simulation:
+`Thermal_Stress/Thermal_Stress.mph`
 
-1. Open:
+Due to file-size limitations for uploading the repository, the COMSOL file may not include all solved datasets. Therefore, users should rerun both the static study and the temperature sweep inside COMSOL to regenerate the full stress and displacement results.
 
-   ```text
-   Thermal_Stress/Thermal_Stress.mph
+The model evaluates the optimized InP-to-SiO₂ gradual substrate transition with:
+
+- `m = 1.55`
+- `T_ref = 300 K`
+- `T_final = 10 K to 500 K`
+
+The simulation extracts:
+
+- first principal stress at the upper-surface triple-material point,
+- first principal stress at the 220 nm-deep triple-material point,
+- first principal stress averaged over the InP/SiO₂ interface,
+- displacement magnitude at the same two probe points,
+- maximum-deformation visualization at the corner of the structure.
+
+Suggested COMSOL workflow:
+
+1. Open `Thermal_Stress/Thermal_Stress.mph`.
+2. Check that the material parameters, thermal expansion settings, and mechanical boundary conditions are loaded correctly.
+3. Run the static study.
+4. Run the temperature sweep from 10 K to 500 K.
+5. Export the stress and displacement results if MATLAB replotting is needed.
+6. Use the MATLAB scripts in the `Thermal_Stress/` folder to regenerate the stress and displacement plots.
+
+> **Note:** The thermomechanical results are intended as numerical trends under the modeled boundary conditions, not as a complete experimental reliability qualification.
+
+---
+
+## 5. Regenerating the paper figures using MATLAB
+
+Figures associated with folders containing `.m` files can be regenerated directly from the MATLAB scripts.
+
+General procedure:
+
+1. Open MATLAB.
+2. Navigate to the folder corresponding to the desired figure.
+3. Run the provided `.m` script.
+4. The script will load the associated `.mat`, `.xlsx`, or exported data files and regenerate the corresponding plot.
+
+| Folder | Main output |
+| ------ | ----------- |
+| **`Wavelength_Dependant_Transmission_plots/`** | Fig. 3 transmission spectra |
+| **`Thermal_Stress/`** | Fig. 6 stress and displacement plots |
+| **`Dispersion/`** | Fig. 7 time-domain pulse comparison |
+| **`Tolerance/`** | Fig. 8 fabrication-tolerance curves |
+
+---
+
+## 6. Data availability
+
+The repository contains the raw and processed simulation data required to reproduce the main figures of the manuscript. Additional post-processing can be performed by modifying the provided MATLAB scripts.
+
+---
+
+## 7. License
+
+This project is released under the MIT License. See the `LICENSE` file for details.
