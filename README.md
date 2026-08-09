@@ -47,25 +47,8 @@ This repository contains the simulation files, exported data, and MATLAB post-pr
    **Visualize → Transmission**
 
 5. If an `.lsf` script is provided in the folder, run the script after the simulation finishes to export the required data for MATLAB post-processing.
-6. Some projects include predefined parameter sweeps under the **Optimizations and Sweeps** tab. In several cases, sweep results are already available and can be inspected without rerunning the full simulation.
+6. Some projects include predefined parameter sweeps under the **Optimizations and Sweeps** tab (For example, sweep_taper_length in `L_Sweep/InP_SiO2_forward_L_Sweep.lms`). In several cases, sweep results are already available and can be inspected without rerunning the full simulation.
 
-### Reproducing the transition-length sweep in Fig. 4
-
-The transmission- and reflection-versus-length results shown in Fig. 4 can be reproduced using the Lumerical project:
-
-`L_Sweep/InP_SiO2_forward_L_Sweep.lms`
-
-After opening the project in Lumerical MODE, run the predefined parameter sweep:
-
-**`sweep_taper_length`**
-
-The sweep varies the transition length `L` from **0.5 µm to 5 µm** for the optimized InP-to-SiO₂ configuration and records both the transmitted and reflected power as functions of `L`.
-
-The exported numerical results used to generate the manuscript figure are also provided in:
-
-`L_Sweep/L_sweep.mat`
-
-This allows Fig. 4 to be regenerated in MATLAB without rerunning the full Lumerical parameter sweep.
 
 > **Tip:** The material models used for the temperature-dependent optical simulations already include the thermo-optic dispersion assumptions used in the manuscript. To change temperature, adjust the global or material-specific temperature parameter consistently with the simulation setup.
 ---
@@ -78,7 +61,7 @@ The COMSOL thermomechanical model used for Fig. 7 is located at:
 
 `Thermal_Stress/Thermal_Stress.mph`
 
-Due to file-size limitations for uploading the repository, the COMSOL file may not include all solved datasets. Therefore, users should rerun both the static study and the temperature sweep inside COMSOL to regenerate the full stress and displacement results.
+Due to file-size limitations for uploading to the repository, the COMSOL file may not include all solved datasets. Therefore, users should rerun both the static study and the temperature sweep inside COMSOL to regenerate the full stress and displacement results.
 
 The model evaluates the optimized InP-to-SiO₂ gradual substrate transition with:
 
@@ -121,39 +104,6 @@ General procedure:
 | **`Dispersion/`** | Fig. 8 time-domain pulse comparison |
 | **`Tolerance/`** | Fig. 9 fabrication-tolerance curves |
 
-### Fig. 4 — Transition-length sweep
-
-The file:
-
-`L_Sweep/L_sweep.mat`
-
-contains the exported numerical data used to generate Fig. 4. It contains the transition-length sweep results for `L = 0.5 µm` to `5 µm`, including the corresponding transmitted and reflected powers.
-
-The MATLAB plotting script in the `L_Sweep/` folder loads `L_sweep.mat` and reproduces the transmission- and reflection-versus-length curves shown in Fig. 4. The selected nominal design value of `L = 1 µm` is also indicated in the manuscript figure.
-
-The same data can be regenerated directly from Lumerical by opening:
-
-`L_Sweep/InP_SiO2_forward_L_Sweep.lms`
-
-and running the predefined:
-
-**`sweep_taper_length`**
-
-parameter sweep.
-
-### Fig. 7 — Thermomechanical plots
-
-The MATLAB files in `Thermal_Stress/` regenerate the first-principal-stress and displacement curves shown in Fig. 7(b) and Fig. 7(c) from the exported COMSOL data.
-
-Fig. 7(d), the maximum-deformation visualization, should be regenerated directly from the COMSOL model after rerunning the static and temperature-sweep studies.
-
-### Fig. 8 — Time-domain signal-quality comparison
-
-The MATLAB files in `Dispersion/` use the exported time-domain simulation data to reproduce the pulse comparison in Fig. 8, including the pulse arrival time, pulse width, and normalized output amplitude.
-
-### Fig. 9 — Fabrication-tolerance analysis
-
-The MATLAB files in `Tolerance/` use the exported tolerance-study data to reproduce the transmission curves corresponding to the nominal design and the ±5% and ±10% dimensional perturbations shown in Fig. 9.
 ---
 
 ## 6. License
