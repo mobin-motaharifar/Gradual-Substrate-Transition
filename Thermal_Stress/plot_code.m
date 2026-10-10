@@ -43,7 +43,7 @@ plot(T_A, avg_stress, 'LineWidth', 2, 'Color', orange);
 xline(300, ':k', '300 K', 'LabelVerticalAlignment', 'top');
 
 xlabel('Final temperature, {\itT}_{final} (K)');
-ylabel('First principal stress (Mega N/m^2)');
+ylabel('First principal stress (MPa)');
 legend('Depth = 220 nm', 'Surface', 'Average over InP/SiO_2 interface', ...
        'Location', 'northwest');
 
