@@ -11,9 +11,9 @@ D = load("chartD.mat");
 subplot(2,2,1);
 A1 = plot(A.lum.x0*1e6, A.lum.y0,'LineWidth',2,'Color','#6BB8F6');
 hold on;
-A2 = plot(A.lum.x1*1e6, A.lum.y1,'LineWidth',2,'Color','#F54D42');
-A3 = plot(A.lum.x2*1e6, A.lum.y2,'LineWidth',2,'Color','#58B15C');
-uistack(A2,"top");
+A2 = plot(A.lum.x1*1e6, A.lum.y1,'LineWidth',2,'Color','#58B15C');
+A3 = plot(A.lum.x2*1e6, A.lum.y2,'LineWidth',2,'Color','#F54D42');
+uistack(A3,"top");
 xlim([0.6 2])
 ylim([0 0.9])
 xline(1.33,':k','1.33\mum','LabelVerticalAlignment','bottom');
